@@ -1,12 +1,15 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Linkedin, Github, Mail, Users, MapPin, Calendar } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Linkedin, Github, Mail, MapPin, Calendar } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackButton from "@/components/BackButton";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 const Team = () => {
+  useScrollToTop();
+  
   const allTeamMembers = [
     {
       name: "Arjun Sharma",
@@ -158,10 +161,7 @@ const Team = () => {
         {/* Header */}
         <section className="py-12 bg-gradient-primary">
           <div className="container mx-auto px-4">
-            <Link to="/" className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-6 transition-colors">
-              <ArrowLeft className="w-4 h-4" />
-              Back to Home
-            </Link>
+            <BackButton className="mb-6" />
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Our Complete Team
             </h1>

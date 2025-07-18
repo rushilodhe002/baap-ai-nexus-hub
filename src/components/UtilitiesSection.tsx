@@ -179,8 +179,12 @@ const UtilitiesSection = () => {
           </div>
 
           <div className="text-center mt-6">
-            <Button variant="outline" size="lg" onClick={() => window.location.href = '/ai-utilities'}>
-              Explore All Tools
+            <Button 
+              size="lg" 
+              className="hover-scale"
+              onClick={() => window.location.href = '/ai-utilities'}
+            >
+              Learn More
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>

@@ -1,11 +1,15 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackButton from "@/components/BackButton";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Bot, Brain, Database, MessageSquare, Zap, Code, Users, Globe } from "lucide-react";
 
 const AIProducts = () => {
+  useScrollToTop();
+  
   const products = [
     {
       id: 1,

@@ -1,5 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackButton from "@/components/BackButton";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -7,6 +9,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Code, Download, FileText, Zap, Terminal, Package, Github, Star } from "lucide-react";
 
 const AIUtilities = () => {
+  useScrollToTop();
+  
   const pythonLibraries = [
     {
       name: "baap-nlp",
@@ -81,18 +85,21 @@ insights = processor.analyze(cleaned_data)`
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4">
-        <div className="container mx-auto text-center">
-          <Badge variant="secondary" className="mb-4 animate-fade-in">
-            <Package className="w-4 h-4 mr-2" />
-            AI Utilities & Tools
-          </Badge>
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 animate-fade-in">
-            Developer <span className="text-primary">Tools & Libraries</span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in">
-            Accelerate your AI development with our comprehensive collection of Python libraries, APIs, and web tools.
-          </p>
+      <section className="pt-24 pb-16 px-4 bg-gradient-primary">
+        <div className="container mx-auto">
+          <BackButton className="mb-6" />
+          <div className="text-center">
+            <Badge variant="secondary" className="mb-4 animate-fade-in text-white/90 bg-white/20 border-white/30">
+              <Package className="w-4 h-4 mr-2" />
+              AI Utilities & Tools
+            </Badge>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in">
+              Developer <span className="text-white/90">Tools & Libraries</span>
+            </h1>
+            <p className="text-xl text-white/90 max-w-3xl mx-auto animate-fade-in">
+              Accelerate your AI development with our comprehensive collection of Python libraries, APIs, and web tools.
+            </p>
+          </div>
         </div>
       </section>
 

@@ -5,8 +5,12 @@ import { ArrowLeft, MessageCircle, Database, Globe, Code, CheckCircle } from "lu
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackButton from "@/components/BackButton";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 const Services = () => {
+  useScrollToTop();
+  
   const services = [
     {
       id: 1,

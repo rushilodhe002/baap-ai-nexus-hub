@@ -5,8 +5,12 @@ import { ArrowLeft, ExternalLink, Github, Download } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackButton from "@/components/BackButton";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 const Products = () => {
+  useScrollToTop();
+  
   const products = [
     {
       id: 1,
@@ -102,10 +106,7 @@ const Products = () => {
         {/* Header */}
         <section className="py-12 bg-gradient-primary">
           <div className="container mx-auto px-4">
-            <Link to="/" className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-6 transition-colors">
-              <ArrowLeft className="w-4 h-4" />
-              Back to Home
-            </Link>
+            <BackButton className="mb-6" />
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Our AI Products
             </h1>

@@ -5,8 +5,12 @@ import { ArrowLeft, Download, Code, Terminal, Package } from "lucide-react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BackButton from "@/components/BackButton";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 const Utilities = () => {
+  useScrollToTop();
+  
   const utilities = [
     {
       id: 1,
