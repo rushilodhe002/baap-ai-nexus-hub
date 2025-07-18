@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Linkedin, Github, Mail, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const TeamSection = () => {
   const teamMembers = [
@@ -39,6 +40,42 @@ const TeamSection = () => {
       linkedin: "#",
       github: "#",
       email: "sneha@baapcompany.com"
+    },
+    {
+      name: "Michael Chen",
+      role: "AI/ML Engineer",
+      bio: "Machine learning engineer with expertise in computer vision and neural networks. Former Google AI researcher.",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
+      linkedin: "#",
+      github: "#",
+      email: "michael@baapcompany.com"
+    },
+    {
+      name: "Sarah Johnson",
+      role: "Product Manager",
+      bio: "Product strategy expert with 7+ years in AI product development. Led product launches at Microsoft and Amazon.",
+      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
+      linkedin: "#",
+      github: "#",
+      email: "sarah@baapcompany.com"
+    },
+    {
+      name: "David Rodriguez",
+      role: "DevOps Engineer",
+      bio: "Cloud infrastructure specialist with expertise in Kubernetes, Docker, and CI/CD. Ensures 99.9% uptime.",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+      linkedin: "#",
+      github: "#",
+      email: "david@baapcompany.com"
+    },
+    {
+      name: "Lisa Wang",
+      role: "UX/UI Designer",
+      bio: "Award-winning designer focused on creating intuitive AI interfaces. 5+ years in design thinking and user research.",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+      linkedin: "#",
+      github: "#",
+      email: "lisa@baapcompany.com"
     }
   ];
 
@@ -148,6 +185,16 @@ const TeamSection = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* View All Team Button */}
+        <div className="mt-16 text-center animate-fade-in">
+          <Link to="/team">
+            <Button size="lg" className="px-8">
+              <Users className="w-5 h-5 mr-2" />
+              View All Team Members
+            </Button>
+          </Link>
         </div>
 
         {/* Join team CTA */}
