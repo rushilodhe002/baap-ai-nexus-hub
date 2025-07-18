@@ -126,6 +126,7 @@ const ServicesSection = () => {
                   <Button 
                     variant="outline" 
                     className="flex-1 group"
+                    onClick={() => window.location.href = '/ai-services'}
                   >
                     Learn More
                   </Button>
