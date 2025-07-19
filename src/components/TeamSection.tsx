@@ -6,75 +6,75 @@ import { Link } from "react-router-dom";
 const TeamSection = () => {
   const teamMembers = [
     {
-      name: "Arjun Sharma",
-      role: "Founder & CEO",
-      bio: "AI visionary with 8+ years in machine learning and business automation. Led multiple successful AI transformations.",
+      name: "Anjali patel",
+      role: "Head of AI Department",
+      bio: "Head of AI Dept | Leading teams to build impactful AI systems.",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/anjali-patel-951172137/",
       github: "#",
       email: "arjun@baapcompany.com"
     },
     {
-      name: "Priya Patel",
-      role: "CTO & AI Research Lead",
-      bio: "PhD in Computer Science, specializing in NLP and deep learning. Published researcher with 20+ patents.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
+      name: "Rahul Wale",
+      role: "AI Research Lead",
+      bio: "AI Research Lead | 2 Yrs Experience | Leading AI Teams & Building Production-Ready Systems",
+      image: "public/lovable-uploads/rahulwale.jpeg",
       linkedin: "#",
       github: "#",
       email: "priya@baapcompany.com"
     },
     {
-      name: "Rahul Singh",
-      role: "Lead Data Scientist",
-      bio: "Expert in data analytics and machine learning with experience in fintech and healthcare AI solutions.",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",
+      name: "Rushi Lodhe",
+      role: "Agentic AI Specialist",
+      bio: "Agentic AI Specialist (2 Yrs) | Building smart AI agents that automate real-world tasks.",
+      image: "public/lovable-uploads/rushilodhe.jpeg",
       linkedin: "#",
       github: "#",
       email: "rahul@baapcompany.com"
     },
     {
-      name: "Sneha Kumar",
-      role: "Senior Full-Stack Developer",
-      bio: "Full-stack expert specializing in React, Python, and cloud architecture. 6+ years building scalable applications.",
+      name: "Saish Jape",
+      role: "AI/ML Engineer",
+      bio: "AI/ML Engineer | 2 Yrs Experience | Building AI-Powered Solutions | Python, PyTorch, and ML/DL",
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
       linkedin: "#",
       github: "#",
       email: "sneha@baapcompany.com"
     },
     {
-      name: "Michael Chen",
-      role: "AI/ML Engineer",
-      bio: "Machine learning engineer with expertise in computer vision and neural networks. Former Google AI researcher.",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",
-      linkedin: "#",
-      github: "#",
+      name: "Sharad Waje",
+      role: "Agentic AI Specialist",
+      bio: "Agentic AI Specialist (2 Yrs) | Building smart AI agents that automate real-world tasks.",
+      image: "public/lovable-uploads/sharadwaje.jpeg",
+      linkedin: "www.linkedin.com/in/sharad-waje-59b0ab299",
+      github: "https://github.com/sharad8855",
       email: "michael@baapcompany.com"
     },
     {
-      name: "Sarah Johnson",
-      role: "Product Manager",
-      bio: "Product strategy expert with 7+ years in AI product development. Led product launches at Microsoft and Amazon.",
+      name: "Sakshi Mali",
+      role: "Data Scientist",
+      bio: "Data Scientist | AI Agentic Developer | 2 years of experience | Building Scalable, Data-Driven Solutions.",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
-      linkedin: "#",
-      github: "#",
-      email: "sarah@baapcompany.com"
+      linkedin: "https://www.linkedin.com/in/sakshi-mali-00b363331/",
+      github: "https://github.com/Saku-Mali0410",
+      email: "sakshimali9037@gmail.com"
     },
     {
-      name: "David Rodriguez",
-      role: "DevOps Engineer",
-      bio: "Cloud infrastructure specialist with expertise in Kubernetes, Docker, and CI/CD. Ensures 99.9% uptime.",
+      name: "Ajinkya Wagh ",
+      role: "AI Software Engineer",
+      bio: "AI Developer | 3 Years AI Engineer Experience | Python & FastAPI Expert | Building Scalable Smart System",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
-      linkedin: "#",
-      github: "#",
+      linkedin: "https://www.linkedin.com/in/ajinkya-wagh-5b64b0266/",
+      github: "https://github.com/ajinkya9849",
       email: "david@baapcompany.com"
     },
     {
-      name: "Lisa Wang",
-      role: "UX/UI Designer",
-      bio: "Award-winning designer focused on creating intuitive AI interfaces. 5+ years in design thinking and user research.",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
-      linkedin: "#",
-      github: "#",
+      name: "Maheshwari Suryavanshi",
+      role: "AI Ethical Practitioner",
+      bio: "Passionate about promoting responsible and ethical AI development. 3 years of experience in AI and ML",
+      image: "public/lovable-uploads/mahisuryavanshi.jpg",
+      linkedin: "https://www.linkedin.com/in/maheshwari-suryavanshi-00b363331/",
+      github: "https://github.com/maheshwari-suryavanshi",
       email: "lisa@baapcompany.com"
     }
   ];
