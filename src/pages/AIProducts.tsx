@@ -13,47 +13,58 @@ const AIProducts = () => {
   const products = [
     {
       id: 1,
-      title: "BAAP AI Chatbot Pro",
+      title: "Digital Parbhani AI Project – Smart Assistant for Citizens",
       description: "Advanced conversational AI with natural language processing and multi-language support.",
-      longDescription: "Our flagship chatbot solution uses cutting-edge machine learning algorithms to provide human-like conversations. Features include sentiment analysis, context awareness, and seamless integration with existing business systems.",
-      features: ["Natural Language Processing", "Multi-language Support", "Sentiment Analysis", "API Integration", "Custom Training"],
-      technologies: ["Python", "TensorFlow", "React", "Node.js", "MongoDB"],
+      longDescription: "The Digital Parbhani AI Chatbot Project is an intelligent conversational system designed to digitize and streamline citizen services in the Parbhani district. Powered by BAAP AI Chatbot Pro, the system offers natural and human-like conversations in multiple languages (including Marathi), integrates with public service APIs, and provides seamless access to essential government and municipal services.",
+      features: ["Natural Language Processing (NLP)", "Multi-language Support:", "Sentiment Analysis", "Context Awareness" , "Custom Training"],
+      technologies: ["Python & fastapi", "Langchain", "flutter", "Node.js", "postSQL" ,"Gemini"],
       icon: MessageSquare,
-      category: "Conversational AI",
-      price: "Starting at $299/month"
+      category: "Conversational AI",  
+      price: ""
     },
     {
       id: 2,
-      title: "Smart Data Processor",
-      description: "Intelligent data extraction and processing with automated insights generation.",
-      longDescription: "Transform your raw data into actionable insights with our AI-powered data processing engine. Handles structured and unstructured data with automated cleaning, analysis, and reporting capabilities.",
-      features: ["Automated Data Cleaning", "Pattern Recognition", "Real-time Processing", "Custom Reports", "API Access"],
-      technologies: ["Python", "Pandas", "Apache Spark", "FastAPI", "PostgreSQL"],
+      title: "Kissan AI Voice Assistant",
+      description: "Empowering farmers with voice-based, multilingual conversational AI built for real-time agricultural support, using state-of-the-art AI + voice tech.",
+      longDescription: "Kissan AI is a next-gen voice assistant crafted for rural farmers, blending conversational AI, multilingual intelligence, and voice-based query handling. Farmers can simply call and ask anything—from weather updates to crop suggestions—in their local language, and Kissan AI responds like a true krushi dost.With deep integration of Twilio for calls and Gemini AI for brainpower, it delivers context-aware, smart, and simple answers even in low-digital areas..",
+      features: ["Conversational AI for Agriculture" ,"Multilingual"  ,"Voice Calling" , "24-hour Chat Memory with Auto Clean-up" , "Farmer Profile Management (via DAO)"],
+      technologies: ["Twilio Voice","Qdrant" , "Langchain" ,"python FastAPI" ,"Docker + Render/VPS" , "Gemini"],
       icon: Database,
       category: "Data Processing",
-      price: "Starting at $199/month"
+      price: ""
     },
     {
       id: 3,
-      title: "BAAP Vision AI",
-      description: "Computer vision solutions for image recognition, object detection, and visual analytics.",
-      longDescription: "Advanced computer vision platform that can identify objects, recognize faces, read text, and analyze visual content with enterprise-grade accuracy and security.",
-      features: ["Object Detection", "Face Recognition", "OCR", "Visual Analytics", "Real-time Processing"],
-      technologies: ["Python", "OpenCV", "TensorFlow", "YOLO", "AWS"],
+      title: "FarmerX AI Assistant",
+      description: "AI-powered financial and advisory chatbot tailored for Indian farmers with full Marathi language support.",
+      longDescription: "Our AI assistant helps farmers manage transactions, get crop and market insights, and ask farming-related questions in their local language. Features include multilingual conversation, financial tracking, context awareness, and seamless integration with databases and dashboards.",
+      features: ["Natural Language Processing ", "Marathi & Hindi Language Support", "Transaction Summary & Insights", "AI-Powered Chat Assistance","LangChain + Gemini Integration", "Context-Aware Suggestions"],
+      technologies: ["Python","Scikit-learn", "next.js", "FastApi", "Langchain"],
       icon: Brain,
-      category: "Computer Vision",
-      price: "Starting at $399/month"
+      category: "Artificial Inteligence",
+      price: ""
     },
     {
       id: 4,
-      title: "AI Workflow Automation",
-      description: "Intelligent automation platform that streamlines business processes using AI.",
-      longDescription: "Automate complex business workflows with AI-driven decision making. Reduces manual work by up to 80% while maintaining accuracy and compliance.",
-      features: ["Process Automation", "Decision Trees", "Integration Hub", "Performance Analytics", "Compliance Monitoring"],
-      technologies: ["Python", "Celery", "Redis", "Docker", "Kubernetes"],
+      title: "BAAP AI ReportGen",
+      description: "Smart Reporting Assistant for Organizations",
+      longDescription: "BAAP AI ReportGen is an intelligent backend solution designed to simplify data reporting and dashboard generation for organizations of all sizes. Powered by Gemini API and developed under BAAP AI, the system allows users to ask natural language questions and get instant SQL-powered insights — all through a sleek and scalable FastAPI backend.",
+      features: ["Natural Language Processing (NLP)", "Dynamic Chart Rendering", "Schema Awareness", "API Integration", "Multi-user Support","Logs & Monitoring"],
+      technologies: ["Python", "FastAPI", "Gemini API", "MySQL", "JWT Auth","Chat.js"],
       icon: Zap,
-      category: "Automation",
-      price: "Starting at $499/month"
+      category: "Artificial Inteligence",
+      price: ""
+    },
+    {
+      id: 5,
+      title: "BAAP AI Builder",
+      description: "Smart BAAP AI Builder – Build Your AI Chatbot in Minutes",
+      longDescription: "BAAP AI Builder is a no-code AI chatbot development platform that empowers users to build intelligent, domain-specific chatbots in just minutes. Designed with simplicity and power in mind, it allows individuals, educators, businesses, and government organizations to create multilingual, embeddable, and API-connected chatbot systems without writing a single line of code.Whether you want to turn a website, PDF, or business workflow into an intelligent assistant, BAAP AI Builder does it all – from ingestion to deployment!",
+      features: ["Multilingual Support", "PDF & Web Ingestion", "Qdrant Vector Search", "Gemini AI Integration:", "Embeddable Chat Widget","Analytics & Logs"],
+      technologies: ["Python & FastAPI", "Gemini API", "Qdrant", "React + Tailwind CSS","PostgreSQ , Docker"],
+      icon: Zap,
+      category: "Artificial Inteligence",
+      price: ""
     }
   ];
 

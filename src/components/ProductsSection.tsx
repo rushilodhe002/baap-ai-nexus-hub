@@ -5,33 +5,19 @@ import { Bot, Database, Zap, Brain, ArrowRight } from "lucide-react";
 const ProductsSection = () => {
   const products = [
     {
-      icon: Bot,
-      title: "BAAP AI Chatbot Pro",
-      description: "BAAP AI Builder offers scalable, intelligent conversational AI systems that understand context, provide accurate answers, and learn from interactions to constantly improve your customer experience.",
-      features: ["Natural Language Processing", "Multi-platform Integration (Web, WhatsApp, Messenger, etc.)", "Custom AI Training with your data", "Real-time Analytics Dashboard"],
-      color: "text-blue-600"
-    },
-    {
       icon: Database,
-      title: "Data Processing Platform",
-      description: "Advanced data extraction, transformation, and analysis tools that turn raw data into actionable business insights.",
-      features: ["Real-time Processing", "API Integration", "Data Visualization", "Automated Reports"],
+      title: "Digital Parbhani AI Project – Smart Assistant for Citizens",
+      description: "The Digital Parbhani AI Chatbot Project is an intelligent conversational system designed to digitize and streamline citizen services in the Parbhani district. Powered by BAAP AI Chatbot Pro, the system offers natural and human-like conversations in multiple languages (including Marathi), integrates with public service APIs, and provides seamless access to essential government and municipal services..",
+      features: ["Natural Language Processing (NLP)", "Multi-language Support:", "Sentiment Analysis", "Context Awareness" , "Custom Training"],
       color: "text-green-600"
     },
     {
-      icon: Zap,
-      title: "Automation Suite",
-      description: "Streamline your business operations with our comprehensive automation tools designed to reduce manual work and increase efficiency.",
-      features: ["Workflow Automation", "Task Scheduling", "Error Handling", "Performance Monitoring"],
-      color: "text-purple-600"
+      icon: Bot,
+      title: "Kissan AI Voice Assistant",
+      description: "Kissan AI is a next-gen voice assistant crafted for rural farmers, blending conversational AI, multilingual intelligence, and voice-based query handling. Farmers can simply call and ask anything—from weather updates to crop suggestions—in their local language, and Kissan AI responds like a true krushi dost.      With deep integration of Twilio for calls and Gemini AI for brainpower, it delivers context-aware, smart, and simple answers even in low-digital areas",
+      features: ["Conversational AI for Agriculture" ,"Multilingual"  ,"Voice Calling" , "24-hour Chat Memory with Auto Clean-up" , "Farmer Profile Management (via DAO)"],
+      color: "text-blue-600"
     },
-    {
-      icon: Brain,
-      title: "Machine Learning Models",
-      description: "Custom ML models tailored to your business needs, from predictive analytics to recommendation systems.",
-      features: ["Predictive Analytics", "Pattern Recognition", "Recommendation Engine", "Continuous Learning"],
-      color: "text-orange-600"
-    }
   ];
 
   return (
