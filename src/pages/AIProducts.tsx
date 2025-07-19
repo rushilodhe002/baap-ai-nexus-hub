@@ -73,8 +73,7 @@ const AIProducts = () => {
       <Navbar />
       
       {/* Hero Section */}
-
-            <section className="pt-24 pb-16 px-4 bg-gradient-primary">
+      <section className="pt-24 pb-16 px-4 bg-gradient-primary">
         <div className="container mx-auto">
           <BackButton className="mb-6" />
           <div className="text-center">
@@ -92,49 +91,37 @@ const AIProducts = () => {
         </div>
       </section>
 
-      {/* <section className="pt-24 pb-16 px-4">
-        <div className="container mx-auto text-center">
-          <Badge variant="secondary" className="mb-4 animate-fade-in">
-            <Bot className="w-4 h-4 mr-2" />
-            AI Products & Solutions
-          </Badge>
-          <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 animate-fade-in">
-            Cutting-Edge <span className="text-primary">AI Products</span>
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto animate-fade-in">
-            Discover our comprehensive suite of AI-powered solutions designed to transform your business operations and drive innovation.
-          </p>
-        </div>
-      </section> */}
-
       {/* Products Grid */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <section className="py-16 px-0 sm:px-4">
+        <div className="container mx-auto px-3 sm:px-0">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
             {products.map((product, index) => (
-              <Card key={product.id} className="group hover:shadow-glow transition-all duration-300 animate-fade-in border-primary/20" style={{animationDelay: `${index * 100}ms`}}>
+              <Card key={product.id} className="group hover:shadow-glow transition-all duration-300 animate-fade-in border-primary/20 w-full" style={{animationDelay: `${index * 100}ms`}}>
                 <CardHeader>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="p-3 rounded-lg bg-primary/10 text-primary">
-                      <product.icon className="w-8 h-8" />
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-3">
+                    <div className="flex items-center gap-3">
+                      <div className="p-3 rounded-lg bg-primary/10 text-primary w-fit">
+                        <product.icon className="w-6 h-6 sm:w-8 sm:h-8" />
+                      </div>
+                      <Badge variant="outline" className="sm:hidden text-xs">{product.category}</Badge>
                     </div>
-                    <Badge variant="outline">{product.category}</Badge>
+                    <Badge variant="outline" className="hidden sm:block text-xs">{product.category}</Badge>
                   </div>
-                  <CardTitle className="text-xl group-hover:text-primary transition-colors">
+                  <CardTitle className="text-lg sm:text-xl group-hover:text-primary transition-colors break-words">
                     {product.title}
                   </CardTitle>
-                  <CardDescription className="text-base">
+                  <CardDescription className="text-sm sm:text-base">
                     {product.description}
                   </CardDescription>
                 </CardHeader>
                 
                 <CardContent className="space-y-6">
-                  <p className="text-muted-foreground">
+                  <p className="text-muted-foreground text-sm sm:text-base">
                     {product.longDescription}
                   </p>
                   
                   <div>
-                    <h4 className="font-semibold mb-3 flex items-center">
+                    <h4 className="font-semibold mb-3 flex items-center text-sm sm:text-base">
                       <Zap className="w-4 h-4 mr-2 text-primary" />
                       Key Features
                     </h4>
@@ -148,7 +135,7 @@ const AIProducts = () => {
                   </div>
                   
                   <div>
-                    <h4 className="font-semibold mb-3 flex items-center">
+                    <h4 className="font-semibold mb-3 flex items-center text-sm sm:text-base">
                       <Code className="w-4 h-4 mr-2 text-primary" />
                       Technologies
                     </h4>
@@ -161,15 +148,15 @@ const AIProducts = () => {
                     </div>
                   </div>
                   
-                  <div className="flex items-center justify-between pt-4 border-t">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between pt-4 border-t gap-3">
                     <span className="text-lg font-semibold text-primary">
                       {product.price}
                     </span>
-                    <div className="space-x-2">
-                      <Button variant="outline" size="sm">
+                    <div className="flex flex-col sm:flex-row gap-2">
+                      <Button variant="outline" size="sm" className="text-xs sm:text-sm">
                         Learn More
                       </Button>
-                      <Button size="sm" className="hover-scale">
+                      <Button size="sm" className="hover-scale text-xs sm:text-sm">
                         Get Started
                       </Button>
                     </div>
@@ -184,16 +171,16 @@ const AIProducts = () => {
       {/* CTA Section */}
       <section className="py-16 px-4 bg-primary/5">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Business?</h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-6">Ready to Transform Your Business?</h2>
+          <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Contact our team to discuss custom AI solutions tailored to your specific needs.
           </p>
-          <div className="space-x-4">
-            <Button size="lg" className="hover-scale">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Button size="lg" className="hover-scale w-full sm:w-auto">
               <Users className="w-5 h-5 mr-2" />
               Consult with Experts
             </Button>
-            <Button variant="outline" size="lg">
+            <Button variant="outline" size="lg" className="w-full sm:w-auto">
               <Globe className="w-5 h-5 mr-2" />
               View Documentation
             </Button>
