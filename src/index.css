@@ -123,3 +123,6 @@
     @apply bg-background text-foreground;
   }
 }
+.mt_5{
+  padding-top: 90px;
+}

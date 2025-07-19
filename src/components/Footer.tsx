@@ -136,14 +136,14 @@ const Footer = () => {
               <Mail className="w-5 h-5 text-primary-foreground/60" />
               <div>
                 <div className="text-sm font-medium">Email Us</div>
-                <div className="text-sm text-primary-foreground/80">hello@baapcompany.com</div>
+                <div className="text-sm text-primary-foreground/80">info@baapcompany.com</div>
               </div>
             </div>
             <div className="flex items-center gap-3">
               <Phone className="w-5 h-5 text-primary-foreground/60" />
               <div>
                 <div className="text-sm font-medium">Call Us</div>
-                <div className="text-sm text-primary-foreground/80">+1 (555) 123-4567</div>
+                <div className="text-sm text-primary-foreground/80">+91 9105868788</div>
               </div>
             </div>
           </div>
@@ -155,7 +155,7 @@ const Footer = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-primary-foreground/80">
-              © 2024 BAAP Company. All rights reserved.
+              © 2025 BAAP Company. All rights reserved.
             </div>
             
             <div className="flex items-center gap-6">
