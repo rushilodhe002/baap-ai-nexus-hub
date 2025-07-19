@@ -51,7 +51,7 @@ const Team = () => {
       location: "Sangamner, Maharashtra",
       joinedDate: "july 2023",
       expertise: ["ML & DL", "Computer Vision", "TensorFlow", "PyTorch", "sklearn"],
-      working: ["Chat bot builder"]
+      working: ["Chat bot builder" , "FarmerX"]
     },
     {
       name: "Rushikesh Ubhedal",
@@ -65,7 +65,7 @@ const Team = () => {
       location: "Denver, CO",
       joinedDate: "April 2021",
       expertise: ["DevOps", "Kubernetes", "Docker", "CI/CD", "Cloud Infrastructure"],
-      working: ["Reporting AI"]
+      working: ["Reporting AI" , "FarmerX"]
     },
     {
       name: "Jay Bhikule",
@@ -79,7 +79,7 @@ const Team = () => {
       location: "Sangamner, Maharashtra",
       joinedDate: "july 2023",
       expertise: ["ML & DL", "Computer Vision", "TensorFlow", "PyTorch", "sklearn"],
-      working: ["Design Excellence Award", "Featured in Design Weekly", "Led UX for 10+ AI products"]
+      working: ["FarmerX"]
     },
     {
       name: "Ashutosh Gadekar",
@@ -135,7 +135,7 @@ const Team = () => {
       location: "sangamner , Maharashtra",
       joinedDate: "july 2023",
       expertise: ["Tokenization", "Transformer models", "Prompt engineering for LLMs", "NLTK",],
-      working: ["Certified Kubernetes Administrator", "99.9% uptime track record", "Cloud Security Specialist"]
+      working: ["chat bot builder"]
     },
     {
       name: "Jagdish Pagar",
@@ -162,7 +162,7 @@ const Team = () => {
       location: "Sangamner, Maharashtra",
       joinedDate: "july 2024",
       expertise: ["AI & Data Science Enthusias", "Power BI", "Building Scalable ML Systems"],
-      working: ["Design Excellence Award", "Featured in Design Weekly", "Led UX for 10+ AI products"]
+      working: []
     },
     {
       name: "Siddharth Talekar ",
@@ -190,7 +190,7 @@ const Team = () => {
       location: "Sangamner, Maharashtra",
       joinedDate: "july 2023",
       expertise: ["ML & DL", "Business Development", "statistics", "langchain", "sklearn"],
-      working: ["Closed $50M+ in partnerships", "Expanded to 15+ countries", "Business Excellence Award"]
+      working: ["Smart farmer"]
     },
     {
       name: "Soham Gagare",
@@ -204,7 +204,7 @@ const Team = () => {
       location: "Sangamner, Maharashtra",
       joinedDate: "july 2023",
       expertise: ["Data Science", "AI Software Enginee", "LLMs", "AI Dev"],
-      working: ["Apache Spark Contributor", "Built pipelines processing 100TB+ daily", "Data Engineering Excellence Award"]
+      working: ["Smart farmer"]
     },
     {
       name: "Kunal Gangarde",
@@ -246,7 +246,7 @@ const Team = () => {
       location: "Sangamner, Maharashtra",
       joinedDate: "july 2022",
       expertise: ["AI Dev", "Python & FastAPI", "Developing Intelligent", "Scalable Systems"],
-      working: ["Apache Spark Contributor", "Built pipelines processing 100TB+ daily", "Data Engineering Excellence Award"]
+      working: []
     },  
     {
       name: "Masira Shaikh",
@@ -274,21 +274,21 @@ const Team = () => {
       location: "Sangamner, Maharashtra",
       joinedDate: "july 2022",
       expertise: ["AI Dev", "Python & FastAPI", "Developing Intelligent", "Scalable Systems"],
-      working: ["Closed $50M+ in partnerships", "Expanded to 15+ countries", "Business Excellence Award"]
+      working: []
     },
     {
       name: "Abhishek Ghotekar ",
       role: "AI Software Engineer",
       bio: "Strategic partnerships and client relationship expert. 6+ years driving growth in AI and technology sectors.",
       fullBio: "AI Software Engineer skilled in designing and deploying AI-powered applications. Combines software engineering with machine learning to build scalable, production-ready systems. Focused on delivering practical AI solutions that drive business value.",
-      image: "public/lovable-uploads/user.png",
+      image: "public/lovable-uploads/abhishek.jpg",
       linkedin: "https://www.linkedin.com/in/rehan-khan-554225321",
       github: "#",
       email: "Abhishek@baapcompany.com",
       location: "Sangamner, Maharashtra",
       joinedDate: "july 2022",
       expertise: ["AI Dev", "Python & FastAPI", "Developing Intelligent", "Scalable Systems"],
-      working: ["Closed $50M+ in partnerships", "Expanded to 15+ countries", "Business Excellence Award"]
+      working: ["FarmerX"]
     },
     {
       name: "Maheshwari Suryavanshi",
@@ -330,7 +330,7 @@ const Team = () => {
       location: "New York, NY",
       joinedDate: "June 2020",
       expertise: ["ML & DL", "LLMs", "Langchain", "transformer"],
-      working: ["Digital parbhani"]
+      working: ["Digital parbhani" , "kissan ai"]
     },
     {
       name: "Sharad Waje",
@@ -344,7 +344,7 @@ const Team = () => {
       location: "Sangamner, Maharashtra",
       joinedDate: "july 2023",
       expertise: ["ML & DL", "LLMs", "Langchain", "transformer"],
-      working: ["Digital parbhani"]
+      working: ["Digital parbhani" , "FarmerX"]
     },
     {
       name: "Saish Jape",
@@ -358,7 +358,7 @@ const Team = () => {
       location: "Sangamner, Maharashtra",
       joinedDate: "july 2023",
       expertise: ["ML & DL", "Computer Vision", "TensorFlow", "PyTorch", "sklearn"],
-      working: ["Chat bot builder"]
+      working: ["Chat bot builder" ]
     },
     {
       name: "Ajinkya Wagh ",
