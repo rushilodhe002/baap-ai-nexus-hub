@@ -5,61 +5,33 @@ import { CheckCircle, ArrowRight, MessageSquare, Database, Cog, Library } from "
 const ServicesSection = () => {
   const services = [
     {
-      icon: MessageSquare,
-      title: "AI Chatbot Development",
-      description: "Custom conversational AI solutions tailored to your business needs with advanced NLP capabilities.",
+      icon: Database,
+      title: "AI Product Development",
+      description: "End-to-end AI product development from idea to scalable deployment, aligned with your business goals.",
       features: [
-        "Multi-platform integration (Web, Mobile, Slack)",
-        "Natural Language Understanding",
-        "Context-aware conversations",
-        "Analytics & reporting dashboard",
-        "24/7 automated customer support"
+        "Ideation & AI use-case validation",
+        "Model design and fine-tuning (LLMs, ML, NLP)",
+        "Backend integration (Python, FastAPI)",
+        "Frontend dashboards for user interaction",
+        "Scalable deployment & monitoring"
       ],
-      pricing: "Starting from $2,500",
-      timeline: "2-4 weeks"
-    },
+      pricing: "Starting",
+      timeline: "4-8 weeks"
+    },    
     {
       icon: Database,
-      title: "Data Extraction & Processing",
-      description: "Transform raw data into actionable insights with our advanced data processing and analysis tools.",
+      title: "AI Teaching Services",
+      description: "Learn AI practically with personalized, project-based teaching tailored to your pace and goals.",
       features: [
-        "Web scraping & data mining",
-        "Real-time data processing",
-        "API integration & automation",
-        "Data cleaning & validation",
-        "Custom reporting solutions"
+        "Beginner to advanced AI & ML topics",
+        "Hands-on coding sessions (Python, ML, NLP)",
+        "Project-based learning with real datasets",
+        "Doubt clearing and mentorship support",
+        "Career guidance in AI industry"
       ],
-      pricing: "Starting from $1,800",
-      timeline: "1-3 weeks"
-    },
-    {
-      icon: Cog,
-      title: "Web & Automation Services",
-      description: "Streamline your operations with custom automation solutions and web application development.",
-      features: [
-        "Workflow automation design",
-        "Custom web applications",
-        "API development & integration",
-        "Process optimization",
-        "Performance monitoring"
-      ],
-      pricing: "Starting from $3,000",
-      timeline: "3-6 weeks"
-    },
-    {
-      icon: Library,
-      title: "Custom Python Libraries",
-      description: "Bespoke Python libraries and tools designed specifically for your unique business requirements.",
-      features: [
-        "Custom algorithm development",
-        "Library architecture design",
-        "Documentation & testing",
-        "Ongoing maintenance support",
-        "Training & knowledge transfer"
-      ],
-      pricing: "Starting from $4,000",
-      timeline: "4-8 weeks"
-    }
+      pricing: "Starting",
+      timeline: "2-6 weeks"
+    }  
   ];
 
   return (
