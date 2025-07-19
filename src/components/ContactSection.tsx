@@ -43,19 +43,19 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email Us",
-      content: "hello@baapcompany.com",
+      content: "info@baapcompany.com",
       description: "Send us an email anytime"
     },
     {
       icon: Phone,
       title: "Call Us",
-      content: "+1 (555) 123-4567",
+      content: "+91 9105868788",
       description: "Mon-Fri from 9am to 6pm"
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      content: "123 Innovation Drive, Tech City, TC 12345",
+      content: "live, At paregaon, Tal, Sangamner, Maharashtra 422611",
       description: "Our headquarters"
     },
     {
@@ -103,7 +103,7 @@ const ContactSection = () => {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        placeholder="John Doe"
+                        placeholder="Enter your Name"
                         required
                         className="transition-all duration-200 focus:ring-2 focus:ring-primary/20"
                       />
@@ -116,7 +116,7 @@ const ContactSection = () => {
                         type="email"
                         value={formData.email}
                         onChange={handleChange}
-                        placeholder="john@example.com"
+                        placeholder="Enter your Email"
                         required
                         className="transition-all duration-200 focus:ring-2 focus:ring-primary/20"
                       />
