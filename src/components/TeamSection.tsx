@@ -9,7 +9,7 @@ const TeamSection = () => {
       name: "Anjali patel",
       role: "Head of AI Department",
       bio: "Head of AI Dept | Leading teams to build impactful AI systems.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+      image: "./../public/lovable-uploads/anjali.jpeg",
       linkedin: "https://www.linkedin.com/in/anjali-patel-951172137/",
       github: "#",
       email: "arjun@baapcompany.com"
@@ -36,7 +36,7 @@ const TeamSection = () => {
       name: "Saish Jape",
       role: "AI/ML Engineer",
       bio: "AI/ML Engineer | 2 Yrs Experience | Building AI-Powered Solutions | Python, PyTorch, and ML/DL",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",
+      image: "./../public/lovable-uploads/saish-jape-photo.jpg",
       linkedin: "#",
       github: "#",
       email: "sneha@baapcompany.com"
@@ -54,7 +54,7 @@ const TeamSection = () => {
       name: "Sakshi Mali",
       role: "Data Scientist",
       bio: "Data Scientist | AI Agentic Developer | 2 years of experience | Building Scalable, Data-Driven Solutions.",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400&h=400&fit=crop&crop=face",
+      image: "./../public/lovable-uploads/sakshimali.jpg",
       linkedin: "https://www.linkedin.com/in/sakshi-mali-00b363331/",
       github: "https://github.com/Saku-Mali0410",
       email: "sakshimali9037@gmail.com"
@@ -63,7 +63,7 @@ const TeamSection = () => {
       name: "Ajinkya Wagh ",
       role: "AI Software Engineer",
       bio: "AI Developer | 3 Years AI Engineer Experience | Python & FastAPI Expert | Building Scalable Smart System",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+      image: "./../public/lovable-uploads/ajinkya-wagh.jpeg",
       linkedin: "https://www.linkedin.com/in/ajinkya-wagh-5b64b0266/",
       github: "https://github.com/ajinkya9849",
       email: "david@baapcompany.com"

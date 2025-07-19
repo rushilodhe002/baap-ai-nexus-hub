@@ -5,14 +5,35 @@ import { Menu, X } from "lucide-react";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isTeamPage, setIsTeamPage] = useState(false);
 
   useEffect(() => {
+    // Check if we're on the team page by looking for team page indicators
+    const checkTeamPage = () => {
+      // You can adjust this logic based on your routing system
+      const isOnTeamPage = 
+        window.location.pathname.includes('/team') || 
+        document.title.includes('Team') ||
+        document.querySelector('h1')?.textContent?.includes('Our Complete Team');
+      
+      setIsTeamPage(isOnTeamPage);
+    };
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
+    // Check on mount and when URL changes
+    checkTeamPage();
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    
+    // Listen for navigation changes if using client-side routing
+    window.addEventListener("popstate", checkTeamPage);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("popstate", checkTeamPage);
+    };
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -32,9 +53,12 @@ const Navbar = () => {
     { label: "Contact", id: "contact" },
   ];
 
+  // Determine if we should use dark styling
+  const shouldUseDarkStyling = isScrolled || isTeamPage;
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled
+      shouldUseDarkStyling
         ? "bg-background/95 backdrop-blur-sm shadow-medium"
         : "bg-transparent"
     }`}>
@@ -43,9 +67,9 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <img
-              src={isScrolled ? "/lovable-uploads/68379c0e-884c-437d-98a8-36e7ff259852.png" : "/lovable-uploads/baaplogo.png"}
+              src={shouldUseDarkStyling ? "/lovable-uploads/68379c0e-884c-437d-98a8-36e7ff259852.png" : "/lovable-uploads/baaplogo.png"}
               alt="BAAP Company Logo"
-              className="h-8 w-auto"
+              className="h-8 w-auto transition-all duration-300"
             />
           </div>
 
@@ -56,7 +80,7 @@ const Navbar = () => {
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={`transition-colors duration-200 font-medium ${
-                  isScrolled
+                  shouldUseDarkStyling
                     ? "text-foreground hover:text-primary"
                     : "text-white hover:text-white/80"
                 }`}
@@ -75,7 +99,7 @@ const Navbar = () => {
               variant="ghost"
               size="icon"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={!isScrolled ? "text-white hover:text-white/80 hover:bg-white/10" : ""}
+              className={!shouldUseDarkStyling ? "text-white hover:text-white/80 hover:bg-white/10" : ""}
             >
               {isMobileMenuOpen ? <X /> : <Menu />}
             </Button>

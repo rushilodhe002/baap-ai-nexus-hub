@@ -1,9 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { MessageCircle, X, Send, Bot, User } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
 
 interface Message {
   id: string;
@@ -17,14 +13,13 @@ const Chatbot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",
-      text: "Hi! I'm BAAP AI Assistant. How can I help you today?",
+      text: "Hi! I'm here to help you. Ask me anything about this website or any topic you'd like to know about.",
       isUser: false,
       timestamp: new Date(),
     }
   ]);
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const { toast } = useToast();
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -35,27 +30,43 @@ const Chatbot = () => {
     scrollToBottom();
   }, [messages]);
 
-  // Demo responses for when API is not available
-  const getDemoResponse = (question: string): string => {
-    const q = question.toLowerCase();
+  const formatBotMessage = (text: string) => {
+    // Convert markdown-style formatting to HTML
+    let formattedText = text
+      // Bold text: **text** or __text__
+      .replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-gray-900">$1</strong>')
+      .replace(/__(.*?)__/g, '<strong class="font-semibold text-gray-900">$1</strong>')
+      // Italic text: *text* or _text_
+      .replace(/\*(.*?)\*/g, '<em class="italic">$1</em>')
+      .replace(/_(.*?)_/g, '<em class="italic">$1</em>')
+      // Code text: `text`
+      .replace(/`([^`]+)`/g, '<code class="bg-gray-100 px-2 py-1 rounded text-xs font-mono">$1</code>')
+      // Line breaks: double newlines become <br><br>, single newlines become <br>
+      .replace(/\n\n/g, '<br><br>')
+      .replace(/\n/g, '<br>')
+      // Bullet points: - item or * item
+      .replace(/^[\-\*]\s(.+)/gm, '<div class="flex items-start gap-2 my-1"><span class="text-purple-400 mt-1">•</span><span>$1</span></div>')
+      // Numbers: 1. item, 2. item, etc.
+      .replace(/^(\d+)\.\s(.+)/gm, '<div class="flex items-start gap-2 my-1"><span class="text-purple-400 font-semibold min-w-[20px]">$1.</span><span>$2</span></div>')
+      // Headings: # text becomes bold and larger
+      .replace(/^#\s(.+)/gm, '<div class="font-semibold text-base text-gray-900 mt-2 mb-1">$1</div>')
+      .replace(/^##\s(.+)/gm, '<div class="font-semibold text-gray-900 mt-2 mb-1">$1</div>');
+
+    // Handle pricing or currency formatting
+    formattedText = formattedText.replace(/\$(\d+(?:,\d{3})*(?:\.\d{2})?)/g, '<span class="font-semibold text-green-600">$1</span>');
     
-    if (q.includes('product') || q.includes('service')) {
-      return "BAAP offers AI chatbots, data processing platforms, automation suites, and machine learning models. We also provide custom development services. Would you like to know more about any specific solution?";
-    }
+    // Highlight BAAP company name with gradient text
+    formattedText = formattedText.replace(/\bBAAP\b/g, '<span class="font-semibold bg-gradient-to-r from-blue-400 via-purple-400 to-blue-500 bg-clip-text text-transparent">BAAP</span>');
     
-    if (q.includes('price') || q.includes('cost')) {
-      return "Our services start from $1,800 for data processing solutions. AI chatbot development begins at $2,500. Custom solutions are priced based on requirements. Would you like a detailed quote?";
-    }
-    
-    if (q.includes('team') || q.includes('company')) {
-      return "BAAP is led by experienced AI developers and data scientists. Our team specializes in machine learning, automation, and custom AI solutions. Visit our Team page to learn more about our experts!";
-    }
-    
-    if (q.includes('contact') || q.includes('demo')) {
-      return "You can reach us through our contact form or schedule a demo. We'd love to discuss how our AI solutions can transform your business operations!";
-    }
-    
-    return "I'm here to help you learn about BAAP's AI solutions. Ask me about our products, services, pricing, or team. How can I assist you today?";
+    return formattedText;
+  };
+
+  const formatTime = (date: Date) => {
+    return date.toLocaleTimeString('en-US', { 
+      hour: '2-digit', 
+      minute: '2-digit',
+      hour12: true 
+    });
   };
 
   const sendMessage = async () => {
@@ -74,31 +85,57 @@ const Chatbot = () => {
     setIsLoading(true);
 
     try {
-      // Use the actual Gemini API key from the user's curl example
-      const GEMINI_API_KEY = "AIzaSyBHcCpQQVm9qZ_4Fz5lz8mTYQ5XvNV_123"; // Replace with actual key
+      const GEMINI_API_KEY = "AIzaSyDUjtnimGDpniWaJ_IOt0G6QEGbNx4ByTI";
       const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
+      
+      // Create conversation context from recent messages
+      const conversationContext = messages
+        .slice(-6) // Get last 6 messages for context
+        .map(msg => `${msg.isUser ? 'User' : 'BAAP Assistant'}: ${msg.text}`)
+        .join('\n');
       
       const response = await fetch(`${GEMINI_API_URL}?key=${GEMINI_API_KEY}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "X-goog-api-key": GEMINI_API_KEY,
         },
         body: JSON.stringify({
           contents: [
             {
               parts: [
                 {
-                  text: `You are BAAP Company's AI assistant. You help users learn about BAAP's AI solutions, products, services, team, and capabilities. Keep responses concise, helpful, and friendly. Focus on how BAAP can help solve their AI needs.
+                  text: `You are BAAP Company's friendly AI assistant. Have natural, engaging conversations while helping users learn about BAAP's services. Be conversational, ask follow-up questions when appropriate, and show genuine interest in helping solve their specific needs.
 
-Context about BAAP Company:
-- We offer AI chatbots, data processing platforms, automation suites, and machine learning models
-- Our services include custom AI development, Python libraries, and web tools
-- We have a team of experienced AI developers, data scientists, and engineers
-- Our Python libraries include baap-nlp (NLP toolkit), baap-vision (computer vision), and baap-data (data processing)
-- Services start from $1,800 for data processing solutions, AI chatbot development from $2,500
+**Your conversational style should be:**
+- Natural and friendly, like talking to a knowledgeable colleague
+- Ask clarifying questions to better understand their needs
+- Share relevant examples and use cases
+- Express enthusiasm about BAAP's capabilities
+- Use "we" when referring to BAAP (you're part of the team)
+- Remember context from the conversation
+- Offer specific next steps or suggestions
 
-User question: ${currentInput}`
+**About BAAP Company:**
+We're an innovative AI company offering:
+- **AI Chatbots** - Custom conversational AI solutions (starting **$2,500**)
+- **Data Processing Platforms** - Automated data workflows (from **$1,800**)  
+- **Automation Suites** - Business process automation
+- **Machine Learning Models** - Custom ML solutions
+- **Python Libraries**: **baap-nlp** (NLP), **baap-vision** (computer vision), **baap-data** (data processing)
+
+Our team includes experienced **AI developers**, **data scientists**, and **engineers** who love solving complex problems.
+
+**Conversation Context:** 
+${conversationContext}
+
+**Current User Message:** ${currentInput}
+
+**Response Guidelines:**
+- Be conversational and engaging
+- Use **bold** for key points, line breaks for clarity
+- Ask relevant follow-up questions
+- Suggest specific BAAP solutions when applicable
+- Show enthusiasm and expertise`
                 }
               ]
             }
@@ -106,15 +143,17 @@ User question: ${currentInput}`
         }),
       });
 
-      let aiResponse = "";
-      
-      if (response.ok) {
-        const data = await response.json();
-        aiResponse = data.candidates?.[0]?.content?.parts?.[0]?.text || getDemoResponse(currentInput);
-      } else {
-        // Fall back to demo response
-        aiResponse = getDemoResponse(currentInput);
+      if (!response.ok) {
+        throw new Error(`API request failed: ${response.status} ${response.statusText}`);
       }
+
+      const data = await response.json();
+      
+      if (!data.candidates || !data.candidates[0] || !data.candidates[0].content) {
+        throw new Error("Invalid response structure from Gemini API");
+      }
+
+      const aiResponse = data.candidates[0].content.parts[0].text;
 
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
@@ -127,15 +166,14 @@ User question: ${currentInput}`
     } catch (error) {
       console.error("Chatbot error:", error);
       
-      // Use demo response as fallback
-      const botMessage: Message = {
+      const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: getDemoResponse(currentInput),
+        text: "I'm sorry, I'm having trouble connecting right now. Please try again in a moment. In the meantime, feel free to explore our website to learn more about BAAP's AI solutions!",
         isUser: false,
         timestamp: new Date(),
       };
 
-      setMessages(prev => [...prev, botMessage]);
+      setMessages(prev => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
     }
@@ -149,44 +187,61 @@ User question: ${currentInput}`
   };
 
   return (
-    <>
+    <div className="fixed bottom-0 right-0 z-50">
       {/* Chat Toggle Button */}
       {!isOpen && (
-        <Button
+        <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 right-6 h-14 w-14 rounded-full bg-gradient-primary hover:scale-110 shadow-2xl z-[9998] animate-scale-in transition-all duration-300"
-          size="icon"
+          className="fixed bottom-6 right-6 h-16 w-16 rounded-full bg-gradient-to-br from-slate-700 via-blue-800 to-indigo-900 hover:from-slate-600 hover:via-blue-700 hover:to-indigo-800 shadow-2xl z-50 transition-all duration-300 hover:scale-110 flex items-center justify-center group"
+          style={{
+            background: 'linear-gradient(135deg, #1e293b 0%, #1e40af 30%, #3730a3 70%, #1e1b4b 100%)'
+          }}
         >
-          <MessageCircle className="h-6 w-6 text-white" />
-        </Button>
+          <MessageCircle className="h-7 w-7 text-white group-hover:animate-pulse" />
+          {/* <div className="absolute -top-1 -right-1 w-4 h-4 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full animate-pulse"></div> */}
+        </button>
       )}
 
       {/* Chat Window */}
       {isOpen && (
-        <Card className="fixed bottom-4 right-4 w-80 sm:w-96 h-[500px] shadow-2xl z-[9999] animate-scale-in bg-background/95 backdrop-blur-sm border-2 border-primary/20 overflow-hidden">
-          <CardHeader className="pb-3 bg-gradient-primary text-white">
-            <div className="flex items-center justify-between">
-              <CardTitle className="text-lg flex items-center gap-2">
+        <div className="fixed bottom-4 right-4 w-80 sm:w-96 h-[580px] rounded-2xl shadow-2xl z-50 border-0 flex flex-col overflow-hidden animate-in slide-in-from-bottom-4 duration-300"
+             style={{
+               background: 'linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%)',
+               backdropFilter: 'blur(10px)'
+             }}>
+          {/* Header */}
+          <div className="text-white px-6 py-4 flex items-center justify-between relative overflow-hidden"
+               style={{
+                 background: 'linear-gradient(135deg, #1e293b 0%, #1e40af 30%, #3730a3 70%, #1e1b4b 100%)'
+               }}>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-20"></div>
+            <div className="flex items-center gap-3 relative z-10">
+              <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/30">
                 <Bot className="h-5 w-5" />
-                BAAP AI Assistant
-              </CardTitle>
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setIsOpen(false)}
-                className="h-8 w-8 text-white hover:bg-white/20"
-              >
-                <X className="h-4 w-4" />
-              </Button>
+              </div>
+              <div>
+                <h3 className="text-lg font-bold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                  BAAP Bot
+                </h3>
+                <p className="text-xs text-blue-200/80">AI-Powered Business Solutions</p>
+              </div>
             </div>
-          </CardHeader>
+            <button
+              onClick={() => setIsOpen(false)}
+              className="h-8 w-8 rounded-full hover:bg-white/20 flex items-center justify-center transition-all duration-200 relative z-10 backdrop-blur-sm"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          </div>
           
-          <CardContent className="flex flex-col h-full pb-4">
-            {/* Messages */}
-            <div className="flex-1 overflow-y-auto space-y-4 mb-4 pr-2 py-2">
-              {messages.map((message) => (
+          {/* Messages Container */}
+          <div className="flex-1 overflow-y-auto p-4 space-y-4"
+               style={{
+                 background: 'linear-gradient(180deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%)'
+               }}>
+            {messages.map((message, index) => (
+              <div key={message.id}>
                 <div
-                  key={message.id}
                   className={`flex items-start gap-3 ${
                     message.isUser ? "flex-row-reverse" : "flex-row"
                   }`}
@@ -194,8 +249,8 @@ User question: ${currentInput}`
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
                       message.isUser 
-                        ? "bg-primary text-primary-foreground" 
-                        : "bg-gradient-primary text-white"
+                        ? "bg-gradient-to-br from-blue-500 via-purple-500 to-indigo-600 text-white shadow-lg" 
+                        : "bg-gradient-to-br from-slate-600 via-blue-700 to-indigo-800 text-white shadow-lg border border-blue-400/30"
                     }`}
                   >
                     {message.isUser ? (
@@ -205,56 +260,89 @@ User question: ${currentInput}`
                     )}
                   </div>
                   <div
-                    className={`max-w-[220px] p-3 rounded-xl text-sm leading-relaxed ${
+                    className={`max-w-[260px] p-4 text-sm leading-relaxed ${
                       message.isUser
-                        ? "bg-primary text-primary-foreground rounded-br-sm"
-                        : "bg-muted/50 text-foreground rounded-bl-sm border border-border/50"
+                        ? "text-white rounded-2xl rounded-br-md shadow-xl border border-blue-400/30"
+                        : "bg-white/95 text-gray-800 rounded-2xl rounded-bl-md shadow-xl border border-gray-200/50 backdrop-blur-sm"
                     }`}
+                    style={message.isUser ? {
+                      background: 'linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #4f46e5 100%)'
+                    } : {}}
                   >
-                    {message.text}
+                    {message.isUser ? (
+                      message.text
+                    ) : (
+                      <div 
+                        className="prose prose-sm max-w-none"
+                        dangerouslySetInnerHTML={{ 
+                          __html: formatBotMessage(message.text) 
+                        }} 
+                      />
+                    )}
                   </div>
                 </div>
-              ))}
-              {isLoading && (
+                {/* Timestamp */}
+                <div className={`text-xs text-blue-300/60 mt-1 ${message.isUser ? 'text-right mr-11' : 'ml-11'}`}>
+                  {formatTime(message.timestamp)}
+                </div>
+              </div>
+            ))}
+            {isLoading && (
+              <div>
                 <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-gradient-primary text-white flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-slate-600 via-blue-700 to-indigo-800 text-white flex items-center justify-center shadow-lg border border-blue-400/30">
                     <Bot className="h-4 w-4" />
                   </div>
-                  <div className="bg-muted/50 p-3 rounded-xl rounded-bl-sm border border-border/50">
+                  <div className="bg-white/95 p-4 rounded-2xl rounded-bl-md shadow-xl border border-gray-200/50 backdrop-blur-sm">
                     <div className="flex space-x-1">
-                      <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                      <div className="w-2 h-2 bg-primary rounded-full animate-pulse" style={{animationDelay: "0.2s"}}></div>
-                      <div className="w-2 h-2 bg-primary rounded-full animate-pulse" style={{animationDelay: "0.4s"}}></div>
+                      <div className="w-2 h-2 bg-blue-500 rounded-full animate-bounce"></div>
+                      <div className="w-2 h-2 bg-purple-500 rounded-full animate-bounce" style={{animationDelay: "0.1s"}}></div>
+                      <div className="w-2 h-2 bg-indigo-500 rounded-full animate-bounce" style={{animationDelay: "0.2s"}}></div>
                     </div>
                   </div>
                 </div>
-              )}
-              <div ref={messagesEndRef} />
-            </div>
+                <div className="text-xs text-blue-300/60 mt-1 ml-11">
+                  {formatTime(new Date())}
+                </div>
+              </div>
+            )}
+            <div ref={messagesEndRef} />
+          </div>
 
-            {/* Input */}
-            <div className="flex gap-2 pt-2 border-t border-border/20">
-              <Input
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-                onKeyPress={handleKeyPress}
-                placeholder="Ask me anything about BAAP..."
-                className="flex-1 bg-background/50 border-border/50 focus:border-primary"
-                disabled={isLoading}
-              />
-              <Button
+          {/* Input Section */}
+          <div className="p-4 border-t border-white/10"
+               style={{
+                 background: 'linear-gradient(180deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%)'
+               }}>
+            <div className="flex gap-3 items-end">
+              <div className="flex-1 relative">
+                <input
+                  type="text"
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                  placeholder="Ask me about BAAP's AI solutions..."
+                  className="w-full px-4 py-3 pr-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-400/50 focus:bg-white/15 focus:border-blue-400/30 transition-all duration-200 text-white placeholder-blue-200/60"
+                  disabled={isLoading}
+                />
+              </div>
+              <button
                 onClick={sendMessage}
                 disabled={!inputValue.trim() || isLoading}
-                size="icon"
-                className="shrink-0 bg-primary hover:bg-primary/90"
+                className="w-10 h-10 text-white rounded-full transition-all duration-200 flex items-center justify-center disabled:cursor-not-allowed shadow-xl hover:shadow-2xl transform hover:scale-105 disabled:transform-none disabled:opacity-50 border border-blue-400/30"
+                style={{
+                  background: !inputValue.trim() || isLoading 
+                    ? 'linear-gradient(135deg, #64748b 0%, #475569 100%)'
+                    : 'linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #4f46e5 100%)'
+                }}
               >
                 <Send className="h-4 w-4" />
-              </Button>
+              </button>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       )}
-    </>
+    </div>
   );
 };
 
