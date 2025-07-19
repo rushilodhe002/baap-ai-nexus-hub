@@ -1,67 +1,58 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Code, Download, GitBranch, Package, ArrowRight } from "lucide-react";
+import { Code, Download, GitBranch, Package, ArrowRight, Plus } from "lucide-react";
 
 const UtilitiesSection = () => {
   const utilities = [
     {
-      title: "BAAP-ML Toolkit",
-      description: "Comprehensive machine learning library with pre-built models and easy-to-use APIs for rapid AI development.",
-      version: "v2.1.0",
-      downloads: "10K+",
-      language: "Python",
-      tags: ["Machine Learning", "Deep Learning", "Neural Networks"],
-      features: [
-        "Pre-trained models for common tasks",
-        "Easy data preprocessing tools",
-        "Model evaluation metrics",
-        "Export to various formats"
+      "title": "my-wp-tools",
+      "description": "Easily send WhatsApp messages from Python using the official Meta WhatsApp Cloud API. Perfect for alerts, notifications, and automated messaging tasks.",
+      "version": "v0.1.3",
+      "downloads": "N/A",
+      "language": "Python",
+      "tags": ["WhatsApp", "Messaging", "Automation", "API"],
+      "features": [
+        "Plug-and-play API for sending WhatsApp messages",
+        "Supports Meta WhatsApp Cloud API",
+        "Clear input validation and error handling",
+        "Custom exception handling",
+        "Requires minimal setup with access token and IDs"
       ]
     },
     {
-      title: "BAAP-Data Pipeline",
-      description: "Robust data processing pipeline for ETL operations, data cleaning, and transformation workflows.",
-      version: "v1.8.2",
-      downloads: "5K+",
+      title: "ragify-lib",
+      description: "Modern Python library for fast and flexible Retrieval-Augmented Generation (RAG) workflows using embedding models and vector databases.",
+      version: "v0.1.5",
+      downloads: "N/A",
       language: "Python",
-      tags: ["Data Processing", "ETL", "Pipeline"],
+      tags: ["RAG", "NLP", "AI", "Embeddings", "Vector Database"],
       features: [
-        "Real-time data streaming",
-        "Automated data validation",
-        "Error handling & recovery",
-        "Scalable architecture"
+        "Plug-and-play with Quadrant vector database or mock mode",
+        "Customizable chunking and embedding configuration",
+        "Human-readable results with scores and metadata",
+        "Robust CLI for automation and scripting"
       ]
     },
     {
-      title: "BAAP-Automation Kit",
-      description: "Collection of automation tools for web scraping, API testing, and workflow automation.",
-      version: "v3.0.1",
-      downloads: "8K+",
+      title: "rawa-bots",
+      description: "A Python library to easily build Gemini- and OpenAI-powered chatbots with support for both text and image generation via HTTP requests.",
+      version: "v0.2.5",
+      downloads: "N/A",
       language: "Python",
-      tags: ["Automation", "Web Scraping", "Testing"],
+      tags: ["Chatbots", "AI", "Gemini", "OpenAI", "Image Generation"],
       features: [
-        "Browser automation",
-        "API endpoint testing",
-        "Scheduled task execution",
-        "Report generation"
-      ]
-    },
-    {
-      title: "BAAP-AI Assistant SDK",
-      description: "Software development kit for building custom AI assistants with voice and text capabilities.",
-      version: "v1.5.0",
-      downloads: "3K+",
-      language: "JavaScript/Python",
-      tags: ["AI Assistant", "SDK", "Voice AI"],
-      features: [
-        "Voice recognition",
-        "Natural language understanding",
-        "Multi-language support",
-        "Custom integrations"
+        "Unified interface for Gemini and OpenAI APIs",
+        "Supports both text and image generation",
+        "Easy switching between providers",
+        "No SDK dependency — uses direct HTTP requests"
       ]
     }
   ];
+
+  const handleViewMore = () => {
+    window.location.href = '/ai-utilities';
+  };
 
   return (
     <section id="utilities" className="py-20 bg-background">
@@ -158,6 +149,50 @@ const UtilitiesSection = () => {
               </CardContent>
             </Card>
           ))}
+
+          {/* View More Card */}
+          <Card 
+            className="group hover:shadow-large transition-all duration-300 hover:-translate-y-1 animate-scale-in relative overflow-hidden cursor-pointer"
+            style={{ animationDelay: '0.3s' }}
+            onClick={handleViewMore}
+          >
+            {/* Blur background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/10 to-primary/5 backdrop-blur-sm"></div>
+            
+            <CardHeader className="relative z-10">
+              <div className="flex items-center justify-center mb-4">
+                <div className="p-4 bg-primary/20 rounded-full">
+                  <Plus className="w-8 h-8 text-primary" />
+                </div>
+              </div>
+              <CardTitle className="text-xl font-bold text-primary text-center">
+                View More Tools
+              </CardTitle>
+              <CardDescription className="text-center text-muted-foreground">
+                Discover our complete collection of AI utilities, libraries, and developer tools.
+              </CardDescription>
+            </CardHeader>
+            
+            <CardContent className="relative z-10">
+              <div className="text-center space-y-4">
+                <div className="flex flex-wrap justify-center gap-2 mb-6">
+                  <Badge variant="secondary" className="text-xs">Machine Learning</Badge>
+                  <Badge variant="secondary" className="text-xs">Data Processing</Badge>
+                  <Badge variant="secondary" className="text-xs">APIs</Badge>
+                  <Badge variant="secondary" className="text-xs">Automation</Badge>
+                </div>
+                
+                <Button 
+                  size="lg" 
+                  className="w-full group hover:bg-primary/90 transition-all duration-300"
+                  onClick={handleViewMore}
+                >
+                  Explore All Tools
+                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </div>
 
         {/* Installation guide */}
@@ -173,9 +208,9 @@ const UtilitiesSection = () => {
           
           <div className="bg-primary/5 rounded-lg p-4 font-mono text-sm overflow-x-auto">
             <div className="text-muted-foreground mb-2"># Install via pip</div>
-            <div className="text-primary">pip install baap-ml-toolkit</div>
-            <div className="text-primary">pip install baap-data-pipeline</div>
-            <div className="text-primary">pip install baap-automation-kit</div>
+            <div className="text-primary">pip install my-wp-tools</div>
+            <div className="text-primary">pip install ragify-lib</div>
+            <div className="text-primary">pip install rawa-bots</div>
           </div>
 
           <div className="text-center mt-6">

@@ -6,9 +6,9 @@ const ProductsSection = () => {
   const products = [
     {
       icon: Bot,
-      title: "AI Chatbot Development",
-      description: "Intelligent conversational AI solutions that understand context, provide accurate responses, and learn from interactions to improve customer experience.",
-      features: ["Natural Language Processing", "Multi-platform Integration", "Custom Training", "Analytics Dashboard"],
+      title: "BAAP AI Chatbot Pro",
+      description: "BAAP AI Builder offers scalable, intelligent conversational AI systems that understand context, provide accurate answers, and learn from interactions to constantly improve your customer experience.",
+      features: ["Natural Language Processing", "Multi-platform Integration (Web, WhatsApp, Messenger, etc.)", "Custom AI Training with your data", "Real-time Analytics Dashboard"],
       color: "text-blue-600"
     },
     {

@@ -10,6 +10,7 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -33,17 +34,17 @@ const Navbar = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? "bg-background/95 backdrop-blur-sm shadow-medium" 
+      isScrolled
+        ? "bg-background/95 backdrop-blur-sm shadow-medium"
         : "bg-transparent"
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <img 
-              src="/lovable-uploads/68379c0e-884c-437d-98a8-36e7ff259852.png" 
-              alt="BAAP Company Logo" 
+            <img
+              src={isScrolled ? "/lovable-uploads/68379c0e-884c-437d-98a8-36e7ff259852.png" : "/lovable-uploads/baaplogo.png"}
+              alt="BAAP Company Logo"
               className="h-8 w-auto"
             />
           </div>
@@ -54,7 +55,11 @@ const Navbar = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
+                className={`transition-colors duration-200 font-medium ${
+                  isScrolled
+                    ? "text-foreground hover:text-primary"
+                    : "text-white hover:text-white/80"
+                }`}
               >
                 {item.label}
               </button>
@@ -70,6 +75,7 @@ const Navbar = () => {
               variant="ghost"
               size="icon"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className={!isScrolled ? "text-white hover:text-white/80 hover:bg-white/10" : ""}
             >
               {isMobileMenuOpen ? <X /> : <Menu />}
             </Button>
@@ -90,9 +96,9 @@ const Navbar = () => {
                 </button>
               ))}
               <div className="pt-2">
-                <Button 
-                  variant="hero" 
-                  size="sm" 
+                <Button
+                  variant="hero"
+                  size="sm"
                   className="w-full"
                   onClick={() => scrollToSection("contact")}
                 >
