@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Bot, Code, Database, Zap, Users, Clock, Check, ArrowRight } from "lucide-react";
+import { Bot, Code, Database, Zap, Users, Clock, Check, ArrowRight, Package } from "lucide-react";
 
 const AIServices = () => {
   useScrollToTop();
@@ -153,7 +153,25 @@ const AIServices = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4">
+            <section className="pt-24 pb-16 px-4 bg-gradient-primary">
+        <div className="container mx-auto">
+          <BackButton className="mb-6" />
+          <div className="text-center">
+            <Badge variant="secondary" className="mb-4 animate-fade-in text-white/90 bg-white/20 border-white/30">
+              <Package className="w-4 h-4 mr-2" />
+              AI Services & Consulting
+            </Badge>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in">
+              Transform Your Business with <span className="text-white/90">AI Services</span>
+            </h1>
+            <p className="text-xl text-white/90 max-w-3xl mx-auto animate-fade-in">
+              From custom AI development to process automation, we deliver end-to-end solutions that drive real business value.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* <section className="pt-24 pb-16 px-4">
         <div className="container mx-auto text-center">
           <Badge variant="secondary" className="mb-4 animate-fade-in">
             <Users className="w-4 h-4 mr-2" />
@@ -166,7 +184,7 @@ const AIServices = () => {
             From custom AI development to process automation, we deliver end-to-end solutions that drive real business value.
           </p>
         </div>
-      </section>
+      </section> */}
 
       {/* Services Section */}
       <section className="py-16 px-4">

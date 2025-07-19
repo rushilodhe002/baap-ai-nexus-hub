@@ -5,7 +5,7 @@ import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Bot, Brain, Database, MessageSquare, Zap, Code, Users, Globe } from "lucide-react";
+import { Bot, Brain, Database, MessageSquare, Zap, Code, Users, Globe, Package } from "lucide-react";
 
 const AIProducts = () => {
   useScrollToTop();
@@ -73,7 +73,26 @@ const AIProducts = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-4">
+
+            <section className="pt-24 pb-16 px-4 bg-gradient-primary">
+        <div className="container mx-auto">
+          <BackButton className="mb-6" />
+          <div className="text-center">
+            <Badge variant="secondary" className="mb-4 animate-fade-in text-white/90 bg-white/20 border-white/30">
+              <Package className="w-4 h-4 mr-2" />
+              AI Products & Solutions
+            </Badge>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-fade-in">
+              Cutting-Edge <span className="text-white/90">AI Products</span>
+            </h1>
+            <p className="text-xl text-white/90 max-w-3xl mx-auto animate-fade-in">
+              Discover our comprehensive suite of AI-powered solutions designed to transform your business operations and drive innovation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* <section className="pt-24 pb-16 px-4">
         <div className="container mx-auto text-center">
           <Badge variant="secondary" className="mb-4 animate-fade-in">
             <Bot className="w-4 h-4 mr-2" />
@@ -86,7 +105,7 @@ const AIProducts = () => {
             Discover our comprehensive suite of AI-powered solutions designed to transform your business operations and drive innovation.
           </p>
         </div>
-      </section>
+      </section> */}
 
       {/* Products Grid */}
       <section className="py-16 px-4">
