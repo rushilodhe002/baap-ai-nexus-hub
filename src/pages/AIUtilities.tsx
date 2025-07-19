@@ -85,28 +85,28 @@ const AIUtilities = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto">
+      <section className="py-16 px-0 sm:px-4">
+        <div className="container mx-auto px-3 sm:px-0">
           <div className="space-y-8">
             {pythonLibraries.map((lib, index) => (
-              <Card key={lib.name} className="animate-fade-in border-primary/20" style={{animationDelay: `${index * 100}ms`}}>
+              <Card key={lib.name} className="animate-fade-in border-primary/20 w-full" style={{animationDelay: `${index * 100}ms`}}>
                 <CardHeader>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4">
-                      <div className="p-3 rounded-lg bg-primary/10 text-primary">
+                  <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                      <div className="p-3 rounded-lg bg-primary/10 text-primary w-fit">
                         <Package className="w-6 h-6" />
                       </div>
-                      <div>
-                        <CardTitle className="text-xl">{lib.name}</CardTitle>
-                        <CardDescription>{lib.description}</CardDescription>
+                      <div className="min-w-0 flex-1">
+                        <CardTitle className="text-xl break-words">{lib.name}</CardTitle>
+                        <CardDescription className="text-sm sm:text-base">{lib.description}</CardDescription>
                       </div>
                     </div>
-                    <div className="text-right space-y-1">
-                      <div className="flex items-center gap-2">
-                        <Badge variant="outline">{lib.version}</Badge>
-                        <Badge variant="secondary">{lib.category}</Badge>
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 lg:text-right">
+                      <div className="flex flex-wrap items-center gap-2">
+                        <Badge variant="outline" className="text-xs">{lib.version}</Badge>
+                        <Badge variant="secondary" className="text-xs">{lib.category}</Badge>
                       </div>
-                      <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-1 text-sm text-muted-foreground whitespace-nowrap">
                         <Download className="w-4 h-4" />
                         {lib.downloads} downloads
                       </div>
@@ -134,7 +134,7 @@ const AIUtilities = () => {
                       <Terminal className="w-4 h-4 mr-2 text-primary" />
                       Installation
                     </h4>
-                    <div className="bg-muted p-3 rounded-lg font-mono text-sm">
+                    <div className="bg-muted p-3 rounded-lg font-mono text-sm overflow-x-auto">
                       {lib.installation}
                     </div>
                   </div>
@@ -144,14 +144,14 @@ const AIUtilities = () => {
                       <Code className="w-4 h-4 mr-2 text-primary" />
                       Quick Example
                     </h4>
-                    <div className="bg-muted p-4 rounded-lg">
-                      <pre className="text-sm overflow-x-auto">
+                    <div className="bg-muted p-4 rounded-lg overflow-x-auto">
+                      <pre className="text-sm whitespace-pre-wrap break-words">
                         <code>{lib.codeExample}</code>
                       </pre>
                     </div>
                   </div>
                   
-                  <div className="flex gap-2 pt-4 border-t">
+                  <div className="flex flex-col sm:flex-row gap-2 pt-4 border-t">
                     <Button size="sm" className="hover-scale">
                       <Download className="w-4 h-4 mr-2" />
                       Install Now
