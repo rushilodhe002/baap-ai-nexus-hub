@@ -84,14 +84,12 @@ const ProductsSection = () => {
 
         {/* CTA section */}
         <div className="text-center mt-16 animate-fade-in">
-          <h3 className="text-2xl font-bold text-primary mb-4">
-            Ready to Transform Your Business?
-          </h3>
-          <p className="text-muted-foreground mb-6">
-            Get started with our AI solutions today and see the difference.
-          </p>
-          <Button variant="cta" size="lg">
-            Schedule a Demo
+          <Button 
+            variant="cta" 
+            size="lg"
+            onClick={() => window.location.href = '/ai-products'}
+          >
+            See Our All Projects
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
         </div>
