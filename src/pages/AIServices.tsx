@@ -321,14 +321,18 @@ const AIServices = () => {
             Let's discuss how our AI services can transform your business operations and drive growth.
           </p>
           <div className="space-x-4">
-            <Button size="lg" className="hover-scale">
+            <Button 
+              size="lg" 
+              className="hover-scale"
+              onClick={() => window.open('https://wa.me/919105868788', '_blank')}
+            >
               <Users className="w-5 h-5 mr-2" />
               Schedule Consultation
             </Button>
-            <Button variant="outline" size="lg">
+            {/* <Button variant="outline" size="lg">
               <ArrowRight className="w-5 h-5 mr-2" />
               View Case Studies
-            </Button>
+            </Button> */}
           </div>
         </div>
       </section>

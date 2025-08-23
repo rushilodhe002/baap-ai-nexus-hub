@@ -137,7 +137,11 @@ const ServicesSection = () => {
           <p className="text-muted-foreground mb-6 max-w-md mx-auto">
             Let's discuss your project and create a custom solution that drives results.
           </p>
-          <Button variant="cta" size="lg">
+           <Button 
+              size="lg" 
+              className="hover-scale"
+              onClick={() => window.open('https://wa.me/919105868788', '_blank')}
+            >
             Schedule Consultation
             <ArrowRight className="ml-2 w-5 h-5" />
           </Button>

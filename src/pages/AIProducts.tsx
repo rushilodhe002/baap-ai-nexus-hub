@@ -153,12 +153,12 @@ const AIProducts = () => {
                       {product.price}
                     </span>
                     <div className="flex flex-col sm:flex-row gap-2">
-                      <Button variant="outline" size="sm" className="text-xs sm:text-sm">
+                      {/* <Button variant="outline" size="sm" className="text-xs sm:text-sm">
                         Learn More
                       </Button>
                       <Button size="sm" className="hover-scale text-xs sm:text-sm">
                         Get Started
-                      </Button>
+                      </Button> */}
                     </div>
                   </div>
                 </CardContent>
