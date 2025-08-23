@@ -69,14 +69,14 @@ const ProductsSection = () => {
                     </div>
                   ))}
                 </div>
-                <Button 
+                {/* <Button 
                   variant="outline" 
                   className="w-full group hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                   onClick={() => window.location.href = '/ai-products'}
                 >
                   Learn More
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                </Button> */}
               </CardContent>
             </Card>
           ))}

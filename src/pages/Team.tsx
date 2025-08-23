@@ -12,14 +12,14 @@ const Team = () => {
   
   const allTeamMembers = [
     {
-      name: "Anjali patel",
+      name: "still waiting",
       role: "Head of AI Department", 
       bio: "AI visionary with 2+ years in machine learning and business automation. Led multiple successful AI transformations.",
-      fullBio: "Anjali is a seasoned entrepreneur and AI expert with over 8 years of experience in machine learning and business automation. He has led multiple successful AI transformation projects for Fortune 500 companies and has been featured in various tech publications for his innovative approach to AI implementation.",
-      image: "/lovable-uploads/anjali.png",
+      fullBio: "... is a seasoned entrepreneur and AI expert with over 8 years of experience in machine learning and business automation. He has led multiple successful AI transformation projects for Fortune 500 companies and has been featured in various tech publications for his innovative approach to AI implementation.",
+      image: "/lovable-uploads/questionmark.png",
       linkedin: "https://www.linkedin.com/in/anjali-patel-951172137/ ",
       github: "#",
-      email: "anjali@baapcompany.com",
+      email: "...@baapcompany.com",
       location: "Sangamner, Maharashtra",
       joinedDate: "july 2024",
       expertise: [" AI Engineer", "Generative AI", "Enthusiast in Machine Learning", "Deep Learning" , "NLP"],
@@ -209,11 +209,11 @@ const Team = () => {
     },
     {
       name: "Kishor kolhe",
-      role: "Gen AI Engineer",
+      role: "Software Developer | AI & Backend Developer",
       bio: "Strategic partnerships and client relationship expert. 6+ years driving growth in AI and technology sectors.",
       fullBio: "Gen AI Engineer specializing in building and deploying generative AI systems using LLMs and diffusion models. Skilled in prompt engineering, fine-tuning, and integrating GenAI into real-world applications. Focused on creating scalable, impactful AI solutions that drive business innovation.",
       image: "/lovable-uploads/kishor.png",
-      linkedin: "https://www.linkedin.com/in/rehan-khan-554225321",
+      linkedin: "https://www.linkedin.com/in/kishor-kolhe-25a662264/",
       github: "#",
       email: "kishor@baapcompany.com",
       location: "Sangamner, Maharashtra",

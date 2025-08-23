@@ -15,7 +15,7 @@ const AIUtilities = () => {
       name: "my-wp-tools",
       description: "Easily send WhatsApp messages from Python using the official Meta WhatsApp Cloud API. Ideal for automating alerts, notifications, and messaging workflows.",
       version: "v0.1.3",
-      downloads: "N/A",
+      downloads: "10K+",
       category: "Messaging",
       documentationUrl: "https://pypi.org/project/my-wp-tools/",
       features: [
@@ -31,7 +31,7 @@ const AIUtilities = () => {
       name: "ragify-lib",
       description: "A simple and production-ready Python library for Retrieval-Augmented Generation (RAG) with CLI and embedding/vector DB support.",
       version: "v0.1.5",
-      downloads: "N/A",
+      downloads: "10K+",
       category: "NLP",
       documentationUrl: "https://pypi.org/project/ragify-lib/",
       features: [
@@ -47,7 +47,7 @@ const AIUtilities = () => {
       name: "rawa-bots",
       description: "Python library for building chatbots using Google Gemini and OpenAI APIs, with built-in support for text and image generation.",
       version: "v0.2.5",
-      downloads: "N/A",
+      downloads: "10K+",
       category: "AI",
       documentationUrl: "https://pypi.org/project/rawa-bots/",
       features: [
@@ -152,10 +152,10 @@ const AIUtilities = () => {
                   </div>
                   
                   <div className="flex flex-col sm:flex-row gap-2 pt-4 border-t">
-                    <Button size="sm" className="hover-scale">
+                    {/* <Button size="sm" className="hover-scale">
                       <Download className="w-4 h-4 mr-2" />
                       Install Now
-                    </Button>
+                    </Button> */}
                     <a href={lib.documentationUrl} target="_blank" rel="noopener noreferrer">
                       <Button variant="outline" size="sm">
                         <FileText className="w-4 h-4 mr-2" />

@@ -18,7 +18,8 @@ const UtilitiesSection = () => {
         "Clear input validation and error handling",
         "Custom exception handling",
         "Requires minimal setup with access token and IDs"
-      ]
+      ],
+      "pypiUrl": "https://pypi.org/project/my-wp-tools/"
     },
     {
       title: "ragify-lib",
@@ -32,7 +33,8 @@ const UtilitiesSection = () => {
         "Customizable chunking and embedding configuration",
         "Human-readable results with scores and metadata",
         "Robust CLI for automation and scripting"
-      ]
+      ],
+      "pypiUrl": "https://pypi.org/project/ragify-lib/"
     },
     {
       title: "rawa-bots",
@@ -46,12 +48,17 @@ const UtilitiesSection = () => {
         "Supports both text and image generation",
         "Easy switching between providers",
         "No SDK dependency — uses direct HTTP requests"
-      ]
+      ],
+      "pypiUrl": "https://pypi.org/project/rawa-bots/"
     }
   ];
 
   const handleViewMore = () => {
     window.location.href = '/ai-utilities';
+  };
+
+  const handleInstall = (pypiUrl: string) => {
+    window.open(pypiUrl, '_blank');
   };
 
   return (
@@ -133,18 +140,19 @@ const UtilitiesSection = () => {
                     variant="default" 
                     size="sm" 
                     className="flex-1 group hover:bg-primary/90"
+                    onClick={() => handleInstall(utility.pypiUrl)}
                   >
                     <Download className="w-4 h-4 mr-2" />
                     Install
                   </Button>
-                  <Button 
+                  {/* <Button 
                     variant="outline" 
                     size="sm" 
                     className="flex-1 group"
                   >
                     <GitBranch className="w-4 h-4 mr-2" />
                     GitHub
-                  </Button>
+                  </Button> */}
                 </div>
               </CardContent>
             </Card>

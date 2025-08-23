@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 const TeamSection = () => {
   const teamMembers = [
     {
-      name: "Anjali patel",
+      name: "still waiting",
       role: "Head of AI Department", 
       bio: "Head of AI Dept | Leading teams to build impactful AI systems.",
-      image: "/lovable-uploads/anjali.png",
+      image: "/lovable-uploads/questionmark.png",
       linkedin: "https://www.linkedin.com/in/anjali-patel-951172137/",
       github: "#",
       email: "arjun@baapcompany.com"

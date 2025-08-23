@@ -88,13 +88,13 @@ const ServicesSection = () => {
                   ))}
                 </div>
                 <div className="flex gap-3">
-                  <Button 
+                  {/* <Button 
                     variant="default" 
                     className="flex-1 group hover:bg-primary/90"
                   >
                     Get Quote
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
+                  </Button> */}
                   <Button 
                     variant="outline" 
                     className="flex-1 group"
