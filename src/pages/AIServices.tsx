@@ -303,9 +303,9 @@ const AIServices = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button className={`w-full mt-6 hover-scale ${pkg.popular ? '' : 'variant-outline'}`}>
+                  {/* <Button className={`w-full mt-6 hover-scale ${pkg.popular ? '' : 'variant-outline'}`}>
                     {pkg.price === 'Custom' ? 'Contact Sales' : 'Get Started'}
-                  </Button>
+                  </Button> */}
                 </CardContent>
               </Card>
             ))}

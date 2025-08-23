@@ -67,7 +67,7 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-card">
+    <section id="contact" className="py-10 bg-gradient-card">
       <div className="container mx-auto px-4">
         {/* Section header */}
         <div className="text-center mb-16">
@@ -206,7 +206,7 @@ const ContactSection = () => {
         </div>
 
         {/* CTA section */}
-        <div className="mt-16 text-center bg-primary/5 rounded-lg p-8 animate-fade-in">
+        {/* <div className="mt-16 text-center bg-primary/5 rounded-lg p-8 animate-fade-in">
           <h3 className="text-2xl font-bold text-primary mb-4">
             Prefer a Direct Conversation?
           </h3>
@@ -216,7 +216,7 @@ const ContactSection = () => {
           <Button variant="cta" size="lg">
             Book a Call
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -179,10 +179,10 @@ const Products = () => {
 
                         {/* Action Buttons */}
                         <div className="flex gap-3">
-                          <Button className="flex-1">
+                          {/* <Button className="flex-1">
                             <Download className="w-4 h-4 mr-2" />
                             Get Started
-                          </Button>
+                          </Button> */}
                           <Button variant="outline" size="icon">
                             <ExternalLink className="w-4 h-4" />
                           </Button>

@@ -198,7 +198,7 @@ const TeamSection = () => {
         </div>
 
         {/* Join team CTA */}
-        <div className="mt-16 text-center bg-primary/5 rounded-lg p-8 animate-fade-in">
+        {/* <div className="mt-16 text-center bg-primary/5 rounded-lg p-8 animate-fade-in">
           <h3 className="text-2xl font-bold text-primary mb-4">
             Join Our Growing Team
           </h3>
@@ -208,7 +208,7 @@ const TeamSection = () => {
           <Button variant="outline" size="lg">
             View Open Positions
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
