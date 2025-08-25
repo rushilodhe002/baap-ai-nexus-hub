@@ -43,9 +43,9 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <div className="mb-6">
               <img 
-                src="/lovable-uploads/68379c0e-884c-437d-98a8-36e7ff259852.png" 
+                src="/lovable-uploads/baaplogo.png" 
                 alt="BAAP Company Logo" 
-                className="h-8 w-auto mb-4 filter brightness-0 invert"
+                className="h-8 w-auto mb-4"
               />
               <p className="text-primary-foreground/80 text-sm leading-relaxed">
                 Empowering businesses with cutting-edge AI solutions. From chatbots to automation, 

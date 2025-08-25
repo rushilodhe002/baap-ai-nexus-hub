@@ -83,9 +83,8 @@ const ProductsSection = () => {
         </div>
 
         {/* CTA section */}
-        <div className="text-center mt-16 animate-fade-in">
-          <Button 
-            variant="cta" 
+        <div className="text-center mt-16">
+          <Button  
             size="lg"
             onClick={() => window.location.href = '/ai-products'}
           >
