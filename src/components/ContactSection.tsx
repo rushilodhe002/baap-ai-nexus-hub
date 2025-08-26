@@ -1,42 +1,14 @@
-import { useState } from "react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Send, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    toast({
-      title: "Message sent successfully!",
-      description: "Thank you for contacting us. We'll get back to you within 24 hours.",
-    });
-    
-    setFormData({ name: "", email: "", message: "" });
-    setIsSubmitting(false);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
+  // Contact form removed. This section now focuses on direct contact information and FAQs.
+  const handleWhatsAppClick = () => {
+    const phone = "919105868788"; // E.164 without '+' and spaces
+    const message = encodeURIComponent("Hi! I'd like to discuss my project.");
+    const url = `https://wa.me/${phone}?text=${message}`;
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   const contactInfo = [
@@ -83,88 +55,13 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Contact form */}
-          <div className="lg:col-span-2">
-            <Card className="border-0 bg-background/50 backdrop-blur-sm shadow-large animate-scale-in">
-              <CardHeader>
-                <CardTitle className="text-xl font-bold text-primary">Send us a message</CardTitle>
-                <CardDescription>
-                  Fill out the form below and we'll get back to you as soon as possible.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="name">Full Name</Label>
-                      <Input
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="Enter your Name"
-                        required
-                        className="transition-all duration-200 focus:ring-2 focus:ring-primary/20"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="email">Email Address</Label>
-                      <Input
-                        id="email"
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="Enter your Email"
-                        required
-                        className="transition-all duration-200 focus:ring-2 focus:ring-primary/20"
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="Tell us about your project or ask any questions..."
-                      rows={6}
-                      required
-                      className="transition-all duration-200 focus:ring-2 focus:ring-primary/20"
-                    />
-                  </div>
-                  <Button 
-                    type="submit" 
-                    className="w-full group" 
-                    disabled={isSubmitting}
-                    variant="hero"
-                    size="lg"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <div className="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin mr-2" />
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        Send Message
-                        <Send className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </>
-                    )}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          </div>
-
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Contact information */}
           <div className="space-y-6">
             {contactInfo.map((item, index) => (
-              <Card 
-                key={item.title} 
-                className="border-0 bg-background/50 backdrop-blur-sm hover:shadow-medium transition-all duration-300 animate-slide-in-right"
+              <Card
+                key={item.title}
+                className="border-0 bg-background/50 backdrop-blur-sm hover:shadow-medium transition-all duration-300 animate-slide-in-left"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardContent className="p-6">
@@ -181,8 +78,26 @@ const ContactSection = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
 
-            {/* FAQ section */}
+          {/* FAQ section */}
+          <div className="space-y-6">
+            <Card className="border-0 bg-background/50 backdrop-blur-sm shadow-medium animate-slide-in-right">
+              <CardHeader>
+                <CardTitle className="text-xl font-bold text-primary">How we can help</CardTitle>
+              </CardHeader>
+              <CardContent className="p-6">
+                <p className="text-muted-foreground">
+                  Reach out via email or phone and our team will follow up within 24 hours.
+                </p>
+                <div className="mt-4">
+                  <Button onClick={handleWhatsAppClick} variant="hero" size="lg" className="w-full">
+                    Chat on WhatsApp
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
             <Card className="border-0 bg-primary/5 backdrop-blur-sm animate-fade-in">
               <CardContent className="p-6">
                 <h3 className="font-bold text-primary mb-4">Frequently Asked Questions</h3>

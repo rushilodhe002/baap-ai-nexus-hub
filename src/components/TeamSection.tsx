@@ -7,7 +7,7 @@ const TeamSection = () => {
   const teamMembers = [
     {
       name: "Raosaheb ghuge",
-      role: "FOUNDER OF THE BAAP COMPANY", 
+      role: "Chief AI Architect", 
       bio: "Head of AI Dept | Leading teams to build impactful AI systems.",
       image: "/lovable-uploads/raosir.png",
       linkedin: "https://www.linkedin.com/in/anjali-patel-951172137/",

@@ -13,7 +13,7 @@ const Team = () => {
   const allTeamMembers = [
     {
       name: "Raosaheb Ghuge",
-      role: "FOUNDER OF THE BAAP COMPANY", 
+      role: "Chief AI Architect", 
       bio: "Building world class software products from remote villages in India. Led multiple successful AI transformations.",
       fullBio: "raosaheb ghuge is a seasoned entrepreneur and AI expert with over 25 years of experience in machine learning and business automation. He has led multiple successful AI transformation projects for Fortune 500 companies and has been featured in various tech publications for his innovative approach to AI implementation.",
       image: "/lovable-uploads/raosir.png",
