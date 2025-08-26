@@ -11,14 +11,19 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-hero"></div>
-      
-      {/* Animated background elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-primary-glow/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }}></div>
+      {/* Background video */}
+      <div className="absolute inset-0 -z-10">
+        <video
+          className="w-full h-full object-cover"
+          src="/video.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
       </div>
+      {/* Overlay for readability */}
+      <div className="absolute inset-0 bg-black/40 -z-0"></div>
 
       <div className="relative z-10 container mx-auto px-4 text-center mt_5">
         <div className="max-w-4xl mx-auto">
