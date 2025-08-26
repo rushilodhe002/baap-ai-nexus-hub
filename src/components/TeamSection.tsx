@@ -6,18 +6,18 @@ import { Link } from "react-router-dom";
 const TeamSection = () => {
   const teamMembers = [
     {
-      name: "still waiting",
-      role: "Head of AI Department", 
+      name: "Raosaheb ghuge",
+      role: "FOUNDER OF THE BAAP COMPANY", 
       bio: "Head of AI Dept | Leading teams to build impactful AI systems.",
-      image: "/lovable-uploads/questionmark.png",
+      image: "/lovable-uploads/raosir.png",
       linkedin: "https://www.linkedin.com/in/anjali-patel-951172137/",
       github: "#",
-      email: "arjun@baapcompany.com"
+      email: "rao@baapcompany.com"
     },
     {
       name: "Rahul Wale",
-      role: "AI Research Lead",
-      bio: "AI Research Lead | 2 Yrs Experience | Leading AI Teams & Building Production-Ready Systems",
+      role: "Head of AI",
+      bio: "Head of AI | Agentic AI & LLM Architect | Python + Flutter AI Engineer | Building Scalable AI Systems for Real-World Impact | Vibe Coding Expert",
       image: "/lovable-uploads/rahulwale.png",
       linkedin: "#",
       github: "#",

@@ -12,11 +12,11 @@ const Team = () => {
   
   const allTeamMembers = [
     {
-      name: "still waiting",
-      role: "Head of AI Department", 
-      bio: "AI visionary with 2+ years in machine learning and business automation. Led multiple successful AI transformations.",
-      fullBio: "... is a seasoned entrepreneur and AI expert with over 8 years of experience in machine learning and business automation. He has led multiple successful AI transformation projects for Fortune 500 companies and has been featured in various tech publications for his innovative approach to AI implementation.",
-      image: "/lovable-uploads/questionmark.png",
+      name: "Raosaheb Ghuge",
+      role: "FOUNDER OF THE BAAP COMPANY", 
+      bio: "Building world class software products from remote villages in India. Led multiple successful AI transformations.",
+      fullBio: "raosaheb ghuge is a seasoned entrepreneur and AI expert with over 25 years of experience in machine learning and business automation. He has led multiple successful AI transformation projects for Fortune 500 companies and has been featured in various tech publications for his innovative approach to AI implementation.",
+      image: "/lovable-uploads/raosir.png",
       linkedin: "https://www.linkedin.com/in/anjali-patel-951172137/ ",
       github: "#",
       email: "...@baapcompany.com",
@@ -262,6 +262,20 @@ const Team = () => {
       joinedDate: "july 2022",
       expertise: ["Data Science", "AI Software Enginee", "LLMs", "AI Dev"],
       working: ["Reporting AI"]
+    },
+    {
+      name: "Akash Khatale",
+      role: "AI Software Developer",
+      bio: "insights for smarter solutions.At The Baap Company, Akash focuses on applying AI and Machine Learning to solve real-world problem",
+      fullBio: "Akash is an AI/ML Software Developer with strong expertise in Python, FastAPI, Java, and JavaScript, combined with hands-on experience in machine learning and intelligent application development. He has built and deployed backend systems including E-commerce Inventory Management APIs, Reminder Applications, and Real-time Communication Apps, integrating AI-driven insights for smarter solutions.",
+      image: "/lovable-uploads/akshay_khatal.png",
+      linkedin: "https://www.linkedin.com/in/rehan-khan-554225321",
+      github: "#",
+      email: "akash@baapcompany.com",
+      location: "Sangamner, Maharashtra",
+      joinedDate: "july 2022",
+      expertise: ["AI Dev", "Python & FastAPI Pro", "Building Smart Systems That Scale", "DL & ML"],
+      working: ["Chat bot builder"]
     },
     {
       name: "Dhiraj Gaikwad",
